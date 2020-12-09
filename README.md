@@ -30,56 +30,55 @@
 9.完成实验。
 
 ## 核心方法
-1.循环
-public void inputInformation() {
-	Scanner reader = new Scanner(System.in);
-	a:for(;;) {
-		try {
-			System.out.println("请输入姓名");
-	        name=reader.nextLine();
-	        System.out.println("录入成功~");
-	        break a;
-		}
-		catch(Exception e) {
-			System.out.println("您输入的 “"+name+"” 格式不正确，请重新输入！");
-		}
-2.错误处理
-b:for(;;) {
+1.循环  
+public void inputInformation() {  
+	Scanner reader = new Scanner(System.in);  
+	a:for(;;) {  
+		try {  
+			System.out.println("请输入姓名");  
+	        name=reader.nextLine();  
+	        System.out.println("录入成功~");  
+	        break a;  
+		}  
+		catch(Exception e) {  
+			System.out.println("您输入的 “"+name+"” 格式不正确，请重新输入！");  
+		}  
+2.错误处理  
+b:for(;;) {  
 	try{
-	    System.out.println("请输入性别（中文）");
-	    sex=reader.nextLine();
-	    sexquestion(sex);
-	    break b;
-	}
-	catch(customException e) {
-		System.out.println(e.customException(sex));
-	}
-	}
-3.文件录入
-public String readFile() {
-		String original = null;
-		int n=-1;
-		char[] a = new char[100];//缓存，
-		try {
-			File file = new File("D:\\text.txt");
-			InputStream fli = new FileInputStream(file);
-			InputStreamReader in = new InputStreamReader(fli, "UTF-8");
-		while((n=in.read(a,0,100))!=-1) {
-		String s = new String(a,0,n);
-		this.n=n;
-		if(original!=null)
-		original = original+s;
-		else original=s;
-		}
-		
-        in.close();
-      	}
-		catch (IOException e) {
-			System.out.println("File read erroe:"+e);
-		}
-		return original;
-	}
-  
+	    System.out.println("请输入性别（中文）");  
+	    sex=reader.nextLine();  
+	    sexquestion(sex);  
+	    break b;  
+	}  
+	catch(customException e) {  
+		System.out.println(e.customException(sex));  
+	}  
+	}  
+3.文件录入  
+public String readFile() {  
+		String original = null;  
+		int n=-1;  
+		char[] a = new char[100];//缓存，  
+		try {  
+			File file = new File("D:\\text.txt");  
+			InputStream fli = new FileInputStream(file);  
+			InputStreamReader in = new InputStreamReader(fli, "UTF-8");  
+		while((n=in.read(a,0,100))!=-1) {  
+		String s = new String(a,0,n);  
+		this.n=n;  
+		if(original!=null)  
+		original = original+s;  
+		else original=s;  
+		}  
+        in.close();  
+      	}  
+		catch (IOException e) {  
+			System.out.println("File read erroe:"+e);  
+		}  
+		return original;  
+	}  
+   
 ## 实验结果
 ![1](https://github.com/RBMCOPY/experiment4/blob/main/32f311c718813f9aff8e9cd65fac9dc.png)
 ![2](https://github.com/RBMCOPY/experiment4/blob/main/adff5bdd4b08b0e92b35a50ccdbaf70.png)
