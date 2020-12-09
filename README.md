@@ -30,8 +30,60 @@
 9.完成实验。
 
 ## 核心方法
-
+1.循环
+public void inputInformation() {
+	Scanner reader = new Scanner(System.in);
+	a:for(;;) {
+		try {
+			System.out.println("请输入姓名");
+	        name=reader.nextLine();
+	        System.out.println("录入成功~");
+	        break a;
+		}
+		catch(Exception e) {
+			System.out.println("您输入的 “"+name+"” 格式不正确，请重新输入！");
+		}
+2.错误处理
+b:for(;;) {
+	try{
+	    System.out.println("请输入性别（中文）");
+	    sex=reader.nextLine();
+	    sexquestion(sex);
+	    break b;
+	}
+	catch(customException e) {
+		System.out.println(e.customException(sex));
+	}
+	}
+3.文件录入
+public String readFile() {
+		String original = null;
+		int n=-1;
+		char[] a = new char[100];//缓存，
+		try {
+			File file = new File("D:\\text.txt");
+			InputStream fli = new FileInputStream(file);
+			InputStreamReader in = new InputStreamReader(fli, "UTF-8");
+		while((n=in.read(a,0,100))!=-1) {
+		String s = new String(a,0,n);
+		this.n=n;
+		if(original!=null)
+		original = original+s;
+		else original=s;
+		}
+		
+        in.close();
+      	}
+		catch (IOException e) {
+			System.out.println("File read erroe:"+e);
+		}
+		return original;
+	}
+  
 ## 实验结果
 ![1](https://github.com/RBMCOPY/experiment4/blob/main/32f311c718813f9aff8e9cd65fac9dc.png)
 ![2](https://github.com/RBMCOPY/experiment4/blob/main/adff5bdd4b08b0e92b35a50ccdbaf70.png)
 ![3](https://github.com/RBMCOPY/experiment4/blob/main/c3fb8cf97a520692b0a8bfe9e3b7c4b.png)
+
+## 实验感想
+    实验结束了，大家都有一种解脱的感觉。当然我想自己更多的是兴奋和一点点的成就感。现在我觉得，学习java要不断的复习和运用，做到举一反三，将所学知识充分融入到平时的学习生活中去，从而为以后的工作打好坚实的基础。感谢学校和老师能够为我们提供这次机会，让我们更好的掌握和了解java 这门语言。通过这次实训，我真的从中体会了很多东西。我对这个介于人类与非人类之间的计算机编程语言有了较上学期更进一步的认识。其间开心过、郁闷过、无奈过、彷徨..随着实训的圆满成功与实验报告的顺利完成，有点微微的自豪感使人难忘。至于我做的程序，还不是很完善，所以我将一直去完善它，不断地学习下去。伴随着学习的深入，我发现高深的东西还有很多很多，等待着我自己去发掘。对于java语言，我会更加努力。
